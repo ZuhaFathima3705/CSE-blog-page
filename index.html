@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Blog • Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-login">
+  <div class="login-card">
+    <h2>🔑 Club Blog Login</h2>
+    <p class="notice">Choose a role to simulate access.</p>
+    <input id="nameInput" placeholder="Your name (optional)" />
+    <select id="roleSelect">
+      <option value="guest">Guest</option>
+      <option value="member">Member</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button class="btn" onclick="login()">Continue</button>
+    <p style="margin-top:10px;color:#555">Admin → Admin Panel • Member/Guest → Blogs</p>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

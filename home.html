@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Blog • Blogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-home">
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">🌟 Club Blog</div>
+      <nav class="nav">
+        <a href="home.html">Blogs</a>
+        <a href="projects.html">Projects</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="color:#111;margin:10px 0 6px">Events & Blogs</h2>
+    <p class="meta">Previous and current highlights with images, dates, and authors.</p>
+    <section id="blogs" class="grid"></section>
+  </main>
+
+  <!-- Blog details modal -->
+  <div id="blogModal" class="modal" onclick="if(event.target===this) closeModal()">
+    <div class="sheet">
+      <span class="closex" onclick="closeModal()">✕</span>
+      <div class="body"></div>
+    </div>
+  </div>
+
+  <footer>© 2025 Club Blog</footer>
+  <script src="js/app.js"></script>
+  <script>renderBlogs();</script>
+</body>
+</html>

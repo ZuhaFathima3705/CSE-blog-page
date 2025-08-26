@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Blog • Admin</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-admin">
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">⚙️ Admin Panel</div>
+      <nav class="nav">
+        <a href="home.html">Blogs</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice">Admins can Add / Edit / Delete Blogs & Projects. Enrollments are read-only.</div>
+
+    <!-- BLOG FORM -->
+    <section id="blogs-form" class="card" style="margin-bottom:18px">
+      <h3>📝 Add / Edit Blog</h3>
+      <form onsubmit="saveBlogFromForm(event)">
+        <input type="hidden" id="blog-id">
+        <div class="form-row">
+          <input id="blog-title" placeholder="Title" required>
+          <input id="blog-date" type="date" required>
+        </div>
+        <div class="form-row">
+          <input id="blog-author" placeholder="Author" required>
+          <input id="blog-image" placeholder="Image URL" required>
+        </div>
+        <textarea id="blog-desc" placeholder="Description" required></textarea>
+        <button class="btn" type="submit">Save Blog</button>
+      </form>
+    </section>
+
+    <section class="grid" id="list-blogs"></section>
+
+    <!-- PROJECT FORM -->
+    <section id="projects-form" class="card" style="margin:18px 0">
+      <h3>📦 Add / Edit Project</h3>
+      <form onsubmit="saveProjectFromForm(event)">
+        <input type="hidden" id="project-id">
+        <div class="form-row">
+          <input id="project-title" placeholder="Title" required>
+          <select id="project-status">
+            <option value="previous">previous</option>
+            <option value="current" selected>current</option>
+            <option value="future">future</option>
+          </select>
+        </div>
+        <input id="project-image" placeholder="Image URL" required>
+        <textarea id="project-about" placeholder="About" required></textarea>
+        <button class="btn" type="submit">Save Project</button>
+      </form>
+    </section>
+
+    <section class="grid" id="list-projects"></section>
+
+    <section class="card" style="margin-top:18px">
+      <h3>🧾 Enrollments</h3>
+      <div id="enroll-table"></div>
+    </section>
+  </main>
+
+  <footer>© 2025 Club Blog</footer>
+  <script src="js/app.js"></script>
+  <script>renderAdminLists();</script>
+</body>
+</html>
